@@ -63,6 +63,24 @@ namespace MyLinkedList
             }
         }
 
+        public object? ItemAt(int index) {
+            Node current = head;
+
+            if (index == 0) {
+                return head.data;
+            }
+            
+            int currentIndex = 0;
+            while (current != null && currentIndex <= index) {
+                if (currentIndex == index) {
+                    return current.data;
+                }
+                currentIndex++;
+                current = current.next;
+            }
+            return null;
+        }
+
         public override string ToString()
         {
             string contents = "LinkedList:\n";
