@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj": {}
+    "c:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj": {
+    "c:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj",
+        "projectUniqueName": "c:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj",
         "projectName": "C#",
-        "projectPath": "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj",
+        "projectPath": "c:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj",
         "packagesPath": "C:\\Users\\Mikkel Hebel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\obj\\",
+        "outputPath": "c:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mikkel Hebel\\AppData\\Roaming\\NuGet\\NuGet.Config",

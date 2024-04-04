@@ -2,23 +2,29 @@ using System;
 
 namespace MyLinkedList
 {
-    public class LinkedListClass
+    public class LinkedList
     {
         public Node head { get; set; }
-        public int count { get; set; }
+        public static int count { get; set; }
 
-        public void InsertAt(object o, int index=0) {
+        public void IncrementCount()
+        {
+            count++;
+        }
+
+        public void InsertAt(int index, object o) {
             Node current = head;
 
             if (head == null) {
-                head = new Node(o);
+                head = new Node(o, this);
+                return;
             }
             if (index > count || index < 0) {
                 throw new IndexOutOfRangeException();
             }
 
             if (index == 0) { //move head
-                Node newHead = new Node(o);
+                Node newHead = new Node(o, this);
                 newHead.next = head;
                 head = newHead;
             }
@@ -27,7 +33,7 @@ namespace MyLinkedList
                 while (current.next != null) {
                     current = current.next;
                 }
-                current.next = new Node(o);
+                current.next = new Node(o, this);
             }
             else // insert at position
             {
@@ -35,7 +41,7 @@ namespace MyLinkedList
 
                 while (current != null && currentIndex <= index) {
                     if (currentIndex == index) {
-                        Node newNode = new Node(o);
+                        Node newNode = new Node(o, this);
                         newNode.next = current.next;
                         current.next = newNode;
                     }
@@ -46,15 +52,20 @@ namespace MyLinkedList
         }
 
         public void DeleteAt(int index) {
-            Node current = head;
-
             if (index == 0) {
                 head = head.next;
+                count--;
+                return;
+            }
+            if (index > count || index < 0) {
+                throw new IndexOutOfRangeException();
             }
 
+            Node current = head;
             int currentIndex = 0;
-            while (current != null && currentIndex <= index - 1) {
-                if (currentIndex == index) {
+            
+            while (current != null) {
+                if (currentIndex == index -1) {
                     current.next = current.next.next;
                     return;
                 }
@@ -68,6 +79,9 @@ namespace MyLinkedList
 
             if (index == 0) {
                 return head.data;
+            }
+            if (index > count || index < 0) {
+                throw new IndexOutOfRangeException();
             }
             
             int currentIndex = 0;
