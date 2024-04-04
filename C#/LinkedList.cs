@@ -44,5 +44,37 @@ namespace MyLinkedList
                 }
             }
         }
+
+        public void DeleteAt(int index) {
+            Node current = head;
+
+            if (index == 0) {
+                head = head.next;
+            }
+
+            int currentIndex = 0;
+            while (current != null && currentIndex <= index - 1) {
+                if (currentIndex == index) {
+                    current.next = current.next.next;
+                    return;
+                }
+                currentIndex++;
+                current = current.next;
+            }
+        }
+
+        public override string ToString()
+        {
+            string contents = "LinkedList:\n";
+
+            Node current = head;
+            while (current != null)
+            {
+                contents += current.data + "\n";
+                current = current.next;
+            }
+
+            return contents;
+        }
     }
 }
