@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "C#", "C#\C#.csproj", "{A6DD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractDataTypes", "AbstractDataTypes\AbstractDataTypes.csproj", "{C0DF99FF-409F-41D0-8EDE-CEEF10FF130C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListTest", "LinkedListTest\LinkedListTest.csproj", "{45B947A3-363F-4AA4-85F5-942E8632A648}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +23,15 @@ Global
 		{C0DF99FF-409F-41D0-8EDE-CEEF10FF130C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0DF99FF-409F-41D0-8EDE-CEEF10FF130C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0DF99FF-409F-41D0-8EDE-CEEF10FF130C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45B947A3-363F-4AA4-85F5-942E8632A648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45B947A3-363F-4AA4-85F5-942E8632A648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45B947A3-363F-4AA4-85F5-942E8632A648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45B947A3-363F-4AA4-85F5-942E8632A648}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A62B10F9-DF10-4F5A-94A0-29F3B2C24573}
 	EndGlobalSection
 EndGlobal

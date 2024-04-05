@@ -1,5 +1,6 @@
 using AbstractDataTypes;
 using System;
+using System.Text;
 
 namespace ADT
 {
@@ -13,7 +14,6 @@ namespace ADT
             public Node(object data, LinkedList list)
             {
                 Data = data;
-                count++;
             }
 
             public override string ToString()
@@ -23,7 +23,7 @@ namespace ADT
         }
 
         private Node head { get; set; }
-        private static int count;
+        private int count;
 
         public int Count {
             get { return count; }
@@ -31,9 +31,11 @@ namespace ADT
 
         public void InsertAt(int index, object o) {
             Node current = head;
+            Node previous = null;
 
             if (head == null) {
                 head = new Node(o, this);
+                count++;
                 return;
             }
             if (index > count || index < 0) {
@@ -56,16 +58,16 @@ namespace ADT
             {
                 int currentIndex = 0;
 
-                while (current != null && currentIndex <= index) {
-                    if (currentIndex == index) {
-                        Node newNode = new Node(o, this);
-                        newNode.Next = current.Next;
-                        current.Next = newNode;
-                    }
-                    currentIndex++;
+                while (current != null && currentIndex < index) {
+                    previous = current;
                     current = current.Next;
+                    currentIndex++;
                 }
+                Node newNode = new Node(o, this);
+                newNode.Next = current;
+                previous.Next = newNode;
             }
+            count++;
         }
 
         public void DeleteAt(int index) {
@@ -82,8 +84,12 @@ namespace ADT
             int currentIndex = 0;
             
             while (current != null) {
-                if (currentIndex == index -1) {
-                    current.Next = current.Next.Next;
+                if (currentIndex == index - 1) {
+                    if (current.Next != null) {
+                        current.Next = current.Next.Next;
+                    } else {
+                        current.Next = null;
+                    }
                     count--;
                     return;
                 }
@@ -98,33 +104,34 @@ namespace ADT
             if (index == 0) {
                 return head.Data;
             }
-            if (index > count || index < 0) {
+            if (index >= count || index < 0) {
                 throw new IndexOutOfRangeException();
             }
             
             int currentIndex = 0;
-            while (current != null && currentIndex <= index) {
-                if (currentIndex == index) {
-                    return current.Data;
-                }
-                currentIndex++;
+            while (current != null && currentIndex < index) {
                 current = current.Next;
+                currentIndex++;
             }
-            return null;
+            return current.Data;
         }
 
         public override string ToString()
         {
-            string contents = "LinkedList:\n";
+            StringBuilder contents = new StringBuilder();
 
             Node current = head;
             while (current != null)
             {
-                contents += current.Data + "\n";
+                contents.Append(current.Data.ToString());
                 current = current.Next;
+                if (current != null)
+                {
+                    contents.Append("\n");
+                }
             }
 
-            return contents;
+            return contents.ToString();
         }
     }
 }
