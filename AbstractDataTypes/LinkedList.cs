@@ -29,6 +29,14 @@ namespace ADT
             get { return count; }
         }
 
+        public object First {
+            get { return head?.Data; }
+        }
+
+        public object Last {
+            get { return count > 0 ? ItemAt(count - 1) : null; }
+        }
+
         public void InsertAt(int index, object o) {
             Node current = head;
             Node previous = null;
@@ -68,6 +76,27 @@ namespace ADT
                 previous.Next = newNode;
             }
             count++;
+        }
+
+        public void Insert(object o) {
+            Node newHead = new(o, this);
+            newHead.Next = head;
+            head = newHead;
+            count++;
+        }
+
+        public void Append(object o) {
+            if (head == null) {
+                head = new Node(o, this);
+                count++;
+            } else {
+                Node current = head;
+                while (current.Next != null) {
+                    current = current.Next;
+                }
+                current.Next = new Node(o, this);
+                count++;
+            }
         }
 
         public void DeleteAt(int index) {

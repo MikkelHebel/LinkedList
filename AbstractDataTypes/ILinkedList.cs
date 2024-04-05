@@ -9,10 +9,14 @@ namespace AbstractDataTypes
     public interface ILinkedList
     {
         void InsertAt(int index, object o);
+        void Insert(object o);
+        void Append(object o);
         void DeleteAt(int index);
         object ItemAt(int index);
         string ToString();
 
         int Count { get; }
+        object First { get; }
+        object Last { get; }
     }
 }
