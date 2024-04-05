@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj": {}
+    "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj": {
+    "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\AbstractDataTypes\\AbstractDataTypes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj",
-        "projectName": "C#",
-        "projectPath": "c:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj",
+        "projectUniqueName": "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\AbstractDataTypes\\AbstractDataTypes.csproj",
+        "projectName": "AbstractDataTypes",
+        "projectPath": "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\AbstractDataTypes\\AbstractDataTypes.csproj",
         "packagesPath": "C:\\Users\\Mikkel Hebel\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\obj\\",
+        "outputPath": "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\AbstractDataTypes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mikkel Hebel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,6 +28,65 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj",
+        "projectName": "C#",
+        "projectPath": "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\C#.csproj",
+        "packagesPath": "C:\\Users\\Mikkel Hebel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\C#\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Mikkel Hebel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\AbstractDataTypes\\AbstractDataTypes.csproj": {
+                "projectPath": "C:\\Users\\Mikkel Hebel\\Desktop\\Desktop Icons\\Programming\\LinkedList\\AbstractDataTypes\\AbstractDataTypes.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

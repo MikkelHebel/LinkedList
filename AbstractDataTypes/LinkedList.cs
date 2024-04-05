@@ -1,15 +1,32 @@
+using AbstractDataTypes;
 using System;
 
-namespace MyLinkedList
+namespace ADT
 {
-    public class LinkedList
+    public class LinkedList : ILinkedList
     {
-        public Node head { get; set; }
-        public static int count { get; set; }
-
-        public void IncrementCount()
+        private class Node
         {
-            count++;
+            public object Data { get; set; }
+            public Node? Next { get; set; }
+
+            public Node(object data, LinkedList list)
+            {
+                Data = data;
+                count++;
+            }
+
+            public override string ToString()
+            {
+                return Data.ToString();
+            }
+        }
+
+        private Node head { get; set; }
+        private static int count;
+
+        public int Count {
+            get { return count; }
         }
 
         public void InsertAt(int index, object o) {
@@ -25,15 +42,15 @@ namespace MyLinkedList
 
             if (index == 0) { //move head
                 Node newHead = new Node(o, this);
-                newHead.next = head;
+                newHead.Next = head;
                 head = newHead;
             }
             else if (index == count) // insert at end
             {
-                while (current.next != null) {
-                    current = current.next;
+                while (current.Next != null) {
+                    current = current.Next;
                 }
-                current.next = new Node(o, this);
+                current.Next = new Node(o, this);
             }
             else // insert at position
             {
@@ -42,22 +59,22 @@ namespace MyLinkedList
                 while (current != null && currentIndex <= index) {
                     if (currentIndex == index) {
                         Node newNode = new Node(o, this);
-                        newNode.next = current.next;
-                        current.next = newNode;
+                        newNode.Next = current.Next;
+                        current.Next = newNode;
                     }
                     currentIndex++;
-                    current = current.next;
+                    current = current.Next;
                 }
             }
         }
 
         public void DeleteAt(int index) {
             if (index == 0) {
-                head = head.next;
+                head = head.Next;
                 count--;
                 return;
             }
-            if (index > count || index < 0) {
+            if (index > Count || index < 0) {
                 throw new IndexOutOfRangeException();
             }
 
@@ -66,11 +83,12 @@ namespace MyLinkedList
             
             while (current != null) {
                 if (currentIndex == index -1) {
-                    current.next = current.next.next;
+                    current.Next = current.Next.Next;
+                    count--;
                     return;
                 }
                 currentIndex++;
-                current = current.next;
+                current = current.Next;
             }
         }
 
@@ -78,7 +96,7 @@ namespace MyLinkedList
             Node current = head;
 
             if (index == 0) {
-                return head.data;
+                return head.Data;
             }
             if (index > count || index < 0) {
                 throw new IndexOutOfRangeException();
@@ -87,10 +105,10 @@ namespace MyLinkedList
             int currentIndex = 0;
             while (current != null && currentIndex <= index) {
                 if (currentIndex == index) {
-                    return current.data;
+                    return current.Data;
                 }
                 currentIndex++;
-                current = current.next;
+                current = current.Next;
             }
             return null;
         }
@@ -102,8 +120,8 @@ namespace MyLinkedList
             Node current = head;
             while (current != null)
             {
-                contents += current.data + "\n";
-                current = current.next;
+                contents += current.Data + "\n";
+                current = current.Next;
             }
 
             return contents;
