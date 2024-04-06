@@ -123,6 +123,11 @@ namespace ADT
 
         public void DeleteAt(int index)
         {
+            if (index < 0 || index >= count)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
             if (index == 0)
             {
                 head = head.Next;
@@ -131,26 +136,26 @@ namespace ADT
                     head.Prev = null;
                 }
             }
-            if (index > Count || index < 0)
+            else
             {
-                throw new IndexOutOfRangeException();
+                Node current = head;
+                for (int i = 0; i < index - 1; i++)
+                {
+                    current = current.Next;
+                }
+
+                Node nodeToDelete = current.Next;
+                if (nodeToDelete != null)
+                {
+                    Node nextNode = nodeToDelete.Next;
+                    current.Next = nextNode;
+                    if (nextNode != null)
+                    {
+                        nextNode.Prev = current;
+                    }
+                }
             }
 
-            Node current = head;
-            for (int i = 0; i < index; i++)
-            {
-                current = current.Next;
-            }
-
-            if (current.Next != null)
-            {
-                current.Next.Prev = current.Prev;
-            }
-            if (current.Prev != null)
-            {
-                current.Prev.Next = current.Next;
-            }
-            
             count--;
         }
 
