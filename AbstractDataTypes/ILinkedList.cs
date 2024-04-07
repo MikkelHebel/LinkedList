@@ -13,6 +13,7 @@ namespace AbstractDataTypes
         void Append(object o);
         void DeleteAt(int index);
         object ItemAt(int index);
+        void Swap(int index);
         string ToString();
 
         int Count { get; }

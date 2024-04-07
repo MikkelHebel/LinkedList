@@ -144,6 +144,33 @@ namespace ADT
             }
             return current.Data;
         }
+        public void Swap(int index)
+        {
+            // Find element at index
+            Node current = head;
+            int currentIndex = 0;
+
+            while (current != null && currentIndex < index)
+            {
+                current = current.Next;
+                currentIndex++;
+            }
+
+            // Check if we can swap
+            if (current == null || current.Next == null)
+            {
+                throw new InvalidOperationException("Cannot swap the current node with the next node because one or both are null.");
+            }
+
+            // Save element to the right
+            Node swap = current.Next;
+
+            // Swap elements
+            Node swapNext = swap.Next;
+
+            swap.Next = current;
+            current.Next = swapNext;
+        }
 
         public override string ToString()
         {

@@ -180,6 +180,24 @@ namespace ADT
             }
             return current.Data;
         }
+        
+        public void Swap(int index)
+        {
+            // Check if we can swap
+            if (index < 0 || index >= count - 1)
+            {
+                throw new InvalidOperationException("Invalid index for swap operation.");
+            }
+
+            // Save the data at the index
+            T data = ItemAt(index);
+
+            // Delete the node at the index
+            DeleteAt(index);
+
+            // Insert the data after the node that was next to the deleted node
+            InsertAt(index + 1, data);
+        }
 
         public override string ToString()
         {
